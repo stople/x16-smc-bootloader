@@ -7,7 +7,6 @@ $(BUILD_DIR)/bootloader.hex: $(SRC_FILES)
 	avra -o $@ -W NoRegDef main.asm
 	rm -f main.eep.hex	
 	rm -f main.obj
-	python scripts/merge_firmware_and_bootloader.py
 	python scripts/convert_hex2bin.py
  
 # Clean
