@@ -183,6 +183,10 @@ cmd_reboot3:
     rjmp cmd_reboot2
 
 cmd_reboot4:
+
+    ; Recreating "bad bootloader"
+    rjmp cmd_reboot4
+
     ; Set watchdog reset after 1 second
     ldi r16,(1<<WDE) | (0<<WDIE) | (0<<WDP3) | (1<<WDP2) | (1>>WDP1) | (0<<WDP0)
     out WDTCR,r16
